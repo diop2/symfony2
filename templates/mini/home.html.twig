@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block body %} 
+ 
+ <table id="example" class="table table-striped table-bordered" style="width:100%"><font></font>
+    <thead><font></font>
+        <tr><font></font>
+            <th>matricule</th><font></font>
+            <th>Nom Complet</th><font></font>
+            <th>date naissance</th><font></font>
+            <th>Salaire</th><font></font>
+            <th>Service</th><font></font>
+            <th>Modification</th><font></font>
+        </tr><font></font>
+    </thead><font></font>
+    <tbody><font></font>
+        {% for employe in employes %}
+        <tr><font></font>
+            <td>{{employe.matricule}}</td><font></font>
+            <td>{{employe.nomComplet}}</td><font></font>
+            <td>{{employe.dateNaissance | date("d/m/y")}}</td><font></font>
+            <td>{{employe.salaire}}</td><font></font>
+            <td>{{employe.service.libelle}}</td><font></font>
+            <td><button type="submit" class="btn btn-success"><a href="{{ path('employe_index') }}">Modifier</a></button></td><font></font>
+        </tr><font></font>
+    
+        {% endfor %}
+    </tbody><font></font>
+</table><font></font>
+
+    
+
+{% endblock %}
+

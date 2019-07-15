@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% form_theme formEmploye 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Gestion des employés{% endblock %}
+
+{% block body %}
+<h2>création d'article</h2>
+{{form_start(formEmploye)}}
+{{ form_row(formEmploye.matricule,{'attr':{'placeholder':"matricule", 'novalidate':'novalidate'}})}}
+{{ form_row(formEmploye.NomComplet,{'attr':{'placeholder':"Nom Complet"}})}}
+{{ form_row(formEmploye.dateNaissance,{'attr':{'placeholder':"Date de naissance"}})}}
+{{ form_row(formEmploye.salaire,{'attr':{'placeholder':"Salaire"}})}}
+{{ form_row(formEmploye.service,{'attr':{'placeholder':"Type de service"}})}}
+<div class="form-group">
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+{{form_end(formEmploye)}}
+</div>
+
+{{form_end(formEmploye)}}
+{% endblock %}
